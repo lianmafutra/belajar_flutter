@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class Akun extends StatefulWidget {
+class Report extends StatefulWidget {
   @override
-  _AkunState createState() => _AkunState();
+  _ReportState createState() => _ReportState();
 }
 
-class _AkunState extends State<Akun> {
-  @override
+class _ReportState extends State<Report> {
+ @override
   void initState() {
     super.initState();
   }
@@ -14,7 +14,7 @@ class _AkunState extends State<Akun> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-       appBar: AppBar(title: Text("Akun"),),
+       appBar: AppBar(title: Text("Report"),),
         body: SafeArea(
       child: new Container(
           color: Colors.white,
@@ -22,7 +22,7 @@ class _AkunState extends State<Akun> {
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Text('Akun'),
+                  Text('Report'),
                 ]),
           )),
     ));
