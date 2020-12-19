@@ -21,10 +21,10 @@ class MyApp extends StatelessWidget {
                 gradient: LinearGradient(
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
-                    colors: <Color>[
-                        Colors.amber,
-                        Colors.blue
-                  ]
+                  //   colors: <Color>[
+                  //       Colors.amber,
+                  //       Colors.blue
+                  // ]
               )),
             ),
 
