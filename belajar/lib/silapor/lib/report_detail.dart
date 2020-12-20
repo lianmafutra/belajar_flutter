@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
 
 class ReportDetail extends StatelessWidget {
-  String title, content, createdAt;
+  String title, content, createdAt, image;
 // constructor
-  ReportDetail({Key key, this.title, this.content, this.createdAt})
+  ReportDetail({Key key, this.title, this.content, this.createdAt, this.image})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -45,14 +45,14 @@ class ReportDetail extends StatelessWidget {
                         onTap: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (_) {
-                            return DetailScreen();
+                            return DetailScreen(img_url: image);
                           }));
                         },
                         child: Container(
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(20.0),
                             child: Image.network(
-                                'https://picsum.photos/250?image=9',
+                                image,
                                 fit: BoxFit.fill),
                           ),
                         ),
@@ -72,13 +72,17 @@ class ReportDetail extends StatelessWidget {
 }
 
 class DetailScreen extends StatelessWidget {
+
+ final String img_url;
+  const DetailScreen({Key key, this.img_url}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: GestureDetector(
         child: Center(
           child: PhotoView(
-            imageProvider: NetworkImage("https://picsum.photos/250?image=9"),
+            imageProvider: NetworkImage(img_url),
           ),
         ),
         // onTap: () {

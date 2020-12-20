@@ -78,7 +78,8 @@ class _BerandaState extends State<Beranda> {
                                    MaterialPageRoute(builder: (context) => ReportDetail(
                                      title: _data.title.toString(),
                                      content: _data.content.toString(),
-                                     createdAt: _data.createdAt.toString(),)));
+                                     createdAt: _data.createdAt.toString(),
+                                      image: _data.image.toString())));
                                 },
                                 child: new Column(
                                   mainAxisSize: MainAxisSize.min,
