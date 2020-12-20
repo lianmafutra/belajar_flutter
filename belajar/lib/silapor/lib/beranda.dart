@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:silapor/report_detail.dart';
+import 'package:silapor/report_send.dart';
 import 'dart:async';
 import 'dart:convert';
-import 'reportmodel.dart';
+import 'model/reportmodel.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class Beranda extends StatefulWidget {
@@ -46,8 +47,14 @@ class _BerandaState extends State<Beranda> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        backgroundColor: Colors.orange,
+        backgroundColor: Colors.green,
         title: Text('Beranda-Silapor'),
+        actions: [
+          IconButton(
+              icon: const Icon(Icons.search),
+              tooltip: 'Show Snackbar',
+              onPressed: () {}),
+        ],
       ),
       body: RefreshIndicator(
         onRefresh: _refresh,
@@ -74,12 +81,15 @@ class _BerandaState extends State<Beranda> {
                                   //     backgroundColor: Colors.red,
                                   //     textColor: Colors.white,
                                   //     fontSize: 16.0);
-                                  Navigator.push(context,
-                                   MaterialPageRoute(builder: (context) => ReportDetail(
-                                     title: _data.title.toString(),
-                                     content: _data.content.toString(),
-                                     createdAt: _data.createdAt.toString(),
-                                      image: _data.image.toString())));
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => ReportDetail(
+                                              title: _data.title.toString(),
+                                              content: _data.content.toString(),
+                                              createdAt:
+                                                  _data.createdAt.toString(),
+                                              image: _data.image.toString())));
                                 },
                                 child: new Column(
                                   mainAxisSize: MainAxisSize.min,
@@ -102,7 +112,13 @@ class _BerandaState extends State<Beranda> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        backgroundColor: Colors.green,
+        onPressed: () {
+            Navigator.push(context,
+                              MaterialPageRoute(builder: (_) {
+                            return ReportSend();
+                          }));
+        },
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ),

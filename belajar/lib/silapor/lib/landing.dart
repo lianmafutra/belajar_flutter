@@ -34,7 +34,7 @@ class _LandingPageState extends State<LandingPage> {
             BottomNavigationBarItem(
               activeIcon: new Icon(
                 Icons.home,
-                color: Colors.red,
+                color: Colors.green,
               ),
               icon: new Icon(
                 Icons.home,
@@ -43,13 +43,13 @@ class _LandingPageState extends State<LandingPage> {
               title: new Text('Beranda',
                   style: TextStyle(
                       color: _bottomNavCurrentIndex == 0
-                          ? Colors.red
+                          ? Colors.green
                           : Colors.grey)),
             ),
             BottomNavigationBarItem(
               activeIcon: new Icon(
                 Icons.assignment,
-                color: Colors.red,
+                color: Colors.green,
               ),
               icon: new Icon(
                 Icons.assignment,
@@ -58,13 +58,13 @@ class _LandingPageState extends State<LandingPage> {
               title: new Text('Report',
                   style: TextStyle(
                       color: _bottomNavCurrentIndex == 1
-                          ? Colors.red
+                          ? Colors.green
                           : Colors.grey)),
             ),
             BottomNavigationBarItem(
               activeIcon: new Icon(
                 Icons.people,
-                color: Colors.red,
+                color: Colors.green,
               ),
               icon: new Icon(
                 Icons.people,
@@ -73,7 +73,7 @@ class _LandingPageState extends State<LandingPage> {
               title: new Text('Akun',
                   style: TextStyle(
                       color: _bottomNavCurrentIndex == 2
-                          ? Colors.red
+                          ? Colors.green
                           : Colors.grey)),
             ),
           ],
