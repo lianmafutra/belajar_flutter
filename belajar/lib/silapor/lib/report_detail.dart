@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 class ReportDetail extends StatelessWidget {
   String title, content, createdAt;
@@ -13,6 +12,10 @@ class ReportDetail extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: Text("Report Detail"),
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () => Navigator.of(context).pop(),
+          ),
         ),
         body: Container(
           padding: EdgeInsets.all(20),
@@ -74,11 +77,9 @@ class DetailScreen extends StatelessWidget {
     return Scaffold(
       body: GestureDetector(
         child: Center(
-         
-            child: PhotoView(
-              imageProvider: NetworkImage("https://picsum.photos/250?image=9"),
-            ),
-         
+          child: PhotoView(
+            imageProvider: NetworkImage("https://picsum.photos/250?image=9"),
+          ),
         ),
         // onTap: () {
         //   Navigator.pop(context);
